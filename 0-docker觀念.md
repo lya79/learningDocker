@@ -14,17 +14,11 @@ docker compose安裝: https://docs.docker.com/compose/install/
 
 - docker分為 ee與(企業版) ce版本(社區版、免費版)
 
-- docker compose用來同時管理多個 container
-例如同時啟動多個 container
+- docker compose用來同時管理多個 container, 例如同時啟動多個 container
 
 - docker可以打包應用程式, 打包出來的檔案叫做 docker image, docker image可以拿到別台電腦藉由 docker執行
 
-- docker registry是用來存放 docker image
-實現的有官方的 docker hub, 可以找想要的 docker image並且下載回來使用
-
-- start、stop、restart、rm、rmi等這些命令都可同時指定多個 container id, 每個 container id使用空格作為間隔.(並不是每個指令都適用)
-
-    ```$ docker start [container id] [container id] [container id]```
+- docker registry是用來存放 docker image, 實現的有官方的 docker hub, 可以找想要的 docker image並且下載回來使用
 
 - 檔案 Dockerfile用來描述與產生 docker image
 
