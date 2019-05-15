@@ -7,7 +7,7 @@
 # Dockerfile撰寫說明
 Dockerfile都以 KEY-VALUE格式進行撰寫. 因此需要瞭解各個標籤(ex: ```FROM```、```ENV```...)的用途與使用方法.
 
-## ```FROM``` 
+#### ```FROM``` 
 * 用途: 設定基礎映像
 * 說明: 以某一個 Docker image為基底.
 * 命令格式:
@@ -16,7 +16,7 @@ Dockerfile都以 KEY-VALUE格式進行撰寫. 因此需要瞭解各個標籤(ex:
         or
         FROM <image>:<tag>
 
-## ```ENV``` 
+#### ```ENV``` 
 * 用途: 設定環境變數
 * 說明: 容器內可使用設定好的環境變數, Dockerfile在 build時也可以使用此環境變數.
 * 命令格式:
@@ -24,28 +24,28 @@ Dockerfile都以 KEY-VALUE格式進行撰寫. 因此需要瞭解各個標籤(ex:
         ENV <key>=<value> …
 
 
-## ```WORKDIR```
+#### ```WORKDIR```
 * 用途: 設定 Dockerfile在執行特定命令時所在的目錄
 * 說明: 會受到影響的命令 RUN、CMD、ENTRYPOINT、COPY、ADD. 設定時可以是絕對路徑與相對路徑.
 * 命令格式:
 
         WORKDIR <資料夾絕對路徑或相對路徑>
 
-## ```COPY``` 
+#### ```COPY``` 
 * 用途: 將指定目錄下的檔案和目錄複製到容器內指定位置
 * 說明: 指令的來源位置可以多個, 如果目的位置是目錄的話,記得最後要以/結尾. 目的位置可以是絕對路徑或者相對於WORKDIR定義值的相對路徑, 若目的位置不存在，會自動建立.
 * 命令格式:
 
         COPY <src>… <dst>
 
-## ```ADD``` 
+#### ```ADD``` 
 * 用途: 與 ```COPY```相同
 * 說明: 與 ```COPY```差異在於來源位置支援遠端位置(ex: HTTP URL), 並且檔案複製到 iamge時, 如果檔案是壓縮檔, 會自動解開.
 * 命令格式:
 
         ADD <來源網址> <dst>
 
-## ```RUN``` 
+#### ```RUN``` 
 * 用途: 在 build image時指定執行的命令
 * 說明: 
 * 命令格式:
@@ -54,21 +54,21 @@ Dockerfile都以 KEY-VALUE格式進行撰寫. 因此需要瞭解各個標籤(ex:
         or
         RUN ["executable", "param1", "param2"]
 
-## ```EXPOSE```
+#### ```EXPOSE```
 * 用途: 容器要使用的端口
 * 說明: 
 * 命令格式:
 
         EXPOSE <port> [<port>/<protocol>…]
 
-## ```CMD ```
+#### ```CMD ```
 * 用途: 容器啟動後, 容器內要執行的命令
 * 說明: 不能有多個 ```CMD```.
 * 命令格式:
 
         CMD [“executable”,”param1″,”param2″]
 
-## ```ENTRYPOINT``` 
+#### ```ENTRYPOINT``` 
 * 用途: 相同於 ```CMD ```
 * 說明: 不能有多個 ```ENTRYPOINT```, 與 ```CMD ```差異在於, ```ENTRYPOINT```無法被 ```docker run```覆蓋, 但是 ```CMD```可以被 ```docker run```覆蓋.
 * 命令格式:
@@ -78,12 +78,6 @@ Dockerfile都以 KEY-VALUE格式進行撰寫. 因此需要瞭解各個標籤(ex:
 # 打包 Docker iamge命令說明
 
 製作完 Dockerfile後，就可以進行產生 image. 使用 ```docker build```命令.
-
-#### 命令格式:
-
-```shell 
-$ docker build
-```
 
 #### 參數:
 
