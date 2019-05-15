@@ -4,6 +4,45 @@ docker安裝: https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 docker compose安裝: https://docs.docker.com/compose/install/
 
+#### 確認 docker版本
+```shell
+docker version
+```
+
+#### 範例
+```shell
+yuan@yuan-VirtualBox:~$ sudo docker version
+Client:
+ Version:           18.09.6
+ API version:       1.39
+ Go version:        go1.10.8
+ Git commit:        481bc77
+ Built:             Sat May  4 02:35:27 2019
+ OS/Arch:           linux/amd64
+ Experimental:      false
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          18.09.6
+  API version:      1.39 (minimum version 1.12)
+  Go version:       go1.10.8
+  Git commit:       481bc77
+  Built:            Sat May  4 01:59:36 2019
+  OS/Arch:          linux/amd64
+  Experimental:     false
+```
+
+#### 確認 docker compose版本
+```shell
+docker-compose -vserion
+```
+
+#### 範例
+```shell
+yuan@yuan-VirtualBox:~$ sudo docker-compose -vserion
+docker-compose version 1.24.0, build 0aa59064
+```
+
 # 重點
 
 - docker是 container(容器)的管理工具.
