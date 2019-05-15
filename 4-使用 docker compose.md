@@ -50,16 +50,19 @@ $ docker-compose config
 $ docker-compose logs
 ```
 
+---
 用來來查詢指定 container內部使用的端口所對應的外部 IP位址與端口.
 ```shell
 $ docker-compose port aaa 1880
 ```
 
+---
 類似 ```docker ps```, 差異在於只有顯示 `docker-compose.yml`內定義的服務資訊.
 ```shell
 $ docker-compose ps
 ```
 
+---
 `--help`用於查詢命令使用方式與參數說明, 下列範例則是查詢 `docker-compose ps`命令的說明. 
 ```shell
 $ docker-compose ps --help 
@@ -80,6 +83,7 @@ or
 ```shell
 $ docker-compose stop aaa bbb # 單獨停止 docker-compose.yml內定義的 aaa和 bbb服務
 ```
+---
 刪除暫存的服務的 container
 ```shell
 $ docker-compose rm -v # 刪除全部 docker-compose.yml所定義的服務容器
@@ -89,6 +93,7 @@ or
 $ docker-compose rm -v aaa # 刪除 docker-compose.yml內定義的aaa服務容器
 ```
 
+---
 `docker-compose up` 用於啟動服務, 依據 `docker-compose.yml`
 ```shell
 $ docker-compose up
