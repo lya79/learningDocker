@@ -86,6 +86,23 @@ Dockerfile都以 KEY-VALUE格式進行撰寫. 因此需要瞭解各個標籤(ex:
 > 備註:
 > CMD可以為 ENTRYPOINT提供參數, ENTRYPOINT本身也可以包含參數, 但是可以把那些可能需要變動的參數寫到 CMD裏而把那些不需要變動的參數寫到 ENTRYPOINT.
 
+#### 範例:
+
+Dockerfile    
+```Dockerfile
+ENTRYPOINT ["/bin/echo", "Hello"]
+CMD ["World"]
+ ```
+
+```shell
+$ docker run -it <image>
+```
+輸出結果為 Hello World
+```shell
+$ docker run -it <image> Docker
+```
+輸出結果為 Hello Docker
+
 # 打包 Docker iamge命令說明
 
 製作完 Dockerfile後，就可以進行產生 image. 使用 ```docker build```命令.
@@ -125,23 +142,6 @@ CMD ["app"]
 ```shell 
 $ docker build -t my-golang-app . 
 ```
-     
-#### 範例:
-
-Dockerfile    
-```Dockerfile
-ENTRYPOINT ["/bin/echo", "Hello"]
-CMD ["World"]
- ```
-
-```shell
-$ docker run -it <image>
-```
-輸出結果為 Hello World
-```shell
-$ docker run -it <image> Docker
-```
-輸出結果為 Hello Docker
 
 # 附錄. Dockerfile其他寫法
 參考: https://www.jianshu.com/p/eb799d77563f
