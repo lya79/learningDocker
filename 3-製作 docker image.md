@@ -75,6 +75,18 @@ Dockerfile都以 KEY-VALUE格式進行撰寫. 因此需要瞭解各個標籤(ex:
 
         ENTRYPOINT [“executable”, “param1”, “param2”]
 
+#### 說明 ```ENTRYPOINT```與 ```CMD ```的使用時機
+
+如標題, 這兩命令看起來相同作用. 差異在於使用的時機不相同. 當要啟動一個 image時, 會使用 docker run，通常 docker run也可以帶入要執行的命令, 因此會有下列三種執行命令方式. 
+
+1. docker run的命令
+2. ENTRYPOINT的命令
+3. CMD的命令
+
+#### 比較好的使用方式:
+
+CMD可以為 ENTRYPOINT提供參數, ENTRYPOINT本身也可以包含參數, 但是可以把那些可能需要變動的參數寫到 CMD裏而把那些不需要變動的參數寫到 ENTRYPOINT.
+
 # 打包 Docker iamge命令說明
 
 製作完 Dockerfile後，就可以進行產生 image. 使用 ```docker build```命令.
@@ -114,18 +126,6 @@ CMD ["app"]
 ```shell 
 $ docker build -t my-golang-app . 
 ```
-
-## 說明 ```ENTRYPOINT```與 ```CMD ```的使用時機
-
-如標題, 這兩命令看起來相同作用. 差異在於使用的時機不相同. 當要啟動一個 image時, 會使用 docker run，通常 docker run也可以帶入要執行的命令, 因此會有下列三種執行命令方式. 
-
-1. docker run的命令
-2. ENTRYPOINT的命令
-3. CMD的命令
-
-#### 比較好的使用方式:
-
-CMD可以為 ENTRYPOINT提供參數, ENTRYPOINT本身也可以包含參數, 但是可以把那些可能需要變動的參數寫到 CMD裏而把那些不需要變動的參數寫到 ENTRYPOINT.
      
 #### 範例:
 
