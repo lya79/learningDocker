@@ -83,9 +83,8 @@ Dockerfile都以 KEY-VALUE格式進行撰寫. 因此需要瞭解各個標籤(ex:
 2. ENTRYPOINT的命令
 3. CMD的命令
 
-#### 比較好的使用方式:
-
-CMD可以為 ENTRYPOINT提供參數, ENTRYPOINT本身也可以包含參數, 但是可以把那些可能需要變動的參數寫到 CMD裏而把那些不需要變動的參數寫到 ENTRYPOINT.
+        備註:
+        CMD可以為 ENTRYPOINT提供參數, ENTRYPOINT本身也可以包含參數, 但是可以把那些可能需要變動的參數寫到 CMD裏而把那些不需要變動的參數寫到 ENTRYPOINT.
 
 # 打包 Docker iamge命令說明
 
